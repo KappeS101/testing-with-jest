@@ -17,3 +17,13 @@ test('peek on stack with two or more elements returns the top element', () => {
     expect(stack.peek()).toBeDefined();
     expect(stack.peek()).toBe(42);
 });
+
+
+//icke godkänd test,
+test('push adds the latest value to the top of the stack', () => {
+    stack.push("1");
+    stack.push("2");
+
+    //Rätt värde borde vara "Banan".
+    expect(stack.peek()).toBe("1");
+});

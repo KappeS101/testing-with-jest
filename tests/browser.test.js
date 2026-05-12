@@ -11,7 +11,7 @@ jest.setTimeout(1000 * 60 * 5); // 5 minuter
 // Det här körs innan vi kör testerna för att säkerställa att Firefox är igång
 beforeAll(async () => {
 console.log(fileUnderTest);
-    driver = await new Builder().forBrowser('chrome').build(); //ändrade till chrome istllet
+    driver = await new Builder().forBrowser('firefox').build();
     await driver.get(fileUnderTest);
 });
 
@@ -32,5 +32,16 @@ describe('Clicking "Pusha till stacken"', () => {
         let alert = await driver.switchTo().alert();
         await alert.sendKeys("Bananer");
         await alert.accept();
+    });
+});
+
+//icke godkänt test
+describe('Push button on the web page', () => {
+    it('should have the expected button text', async () => {
+        let push = await driver.findElement(By.id('push'));
+        let buttonText = await push.getText();
+
+        //Tar emot "Pusha till stacken" testet förväntar sig "Lägg till i stacken".
+        expect(buttonText).toEqual("Lägg till i stacken");
     });
 });
