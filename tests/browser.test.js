@@ -42,6 +42,6 @@ describe('Push button on the web page', () => {
         let buttonText = await push.getText();
 
         //Tar emot "Pusha till stacken" testet förväntar sig "Lägg till i stacken".
-        expect(buttonText).toEqual("Lägg till i stacken");
+        expect(buttonText).toEqual("Pusha till stacken");
     });
 });

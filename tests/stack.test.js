@@ -24,6 +24,6 @@ test('push adds the latest value to the top of the stack', () => {
     stack.push("1");
     stack.push("2");
 
-    //Rätt värde borde vara "Banan".
-    expect(stack.peek()).toBe("1");
+    //Rätt värde borde vara "2".
+    expect(stack.peek()).toBe("2");
 });
